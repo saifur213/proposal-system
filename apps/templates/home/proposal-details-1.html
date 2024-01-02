@@ -1,0 +1,137 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Forms {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+    {{ block.super }}
+    <link rel="stylesheet" href="/static/assets/css/custom_style.css">
+    <style>
+        .title-section{
+            background-color: #3F4D67;
+        }
+        .title-content{
+            color: #FFFFFF;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 15px
+        }
+        .input-field{
+            margin-bottom: 20px
+        }
+    </style>
+{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Proposal Details</h5>
+                            {% comment %} <a href="#" class="btn btn-primary floating-btn">Add Fields</a> {% endcomment %}
+                              
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Proposal Component</h5>
+                            </div>
+                            <div class="card-body">
+                                {% comment %} <h5>Form controls</h5>
+                                <hr> {% endcomment %}
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form action="{% url 'generateproposal1' %}">
+                                            <div class="form-group col-md-12">
+                                                <div class="title-section">
+                                                    <h6 class="card-title title-content">Company Details</h6>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Compnay Name</label>
+                                                    <input type="text" class="form-control" placeholder="Company Name" value="ABC Company" readonly>
+                                                </div>
+
+                                                <div class="input-field">
+                                                    <label>Compnay Address</label>
+                                                    <input type="text" class="form-control" placeholder="Company Address" value="">
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Email</label>
+                                                    <input type="text" class="form-control" placeholder="Enter email" value="">
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Mobile</label>
+                                                    <input type="number" class="form-control" placeholder="Enter mobile number" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <div class="title-section">
+                                                    <h6 class="card-title title-content">Client Details</h6>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Client Name</label>
+                                                    <input type="text" class="form-control" placeholder="Company Name" value="ABC Company" readonly>
+                                                </div>
+
+                                                <div class="input-field">
+                                                    <label>Client Address</label>
+                                                    <input type="text" class="form-control" placeholder="Company Address" value="">
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Client Email</label>
+                                                    <input type="text" class="form-control" placeholder="Enter email" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <div class="title-section">
+                                                    <h6 class="card-title title-content">Team Details</h6>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Full Name</label>
+                                                    <input type="text" class="form-control" placeholder="Full Name" value="Saifur Rahman" readonly>
+                                                </div>
+
+                                                <div class="input-field">
+                                                    <label>Title</label>
+                                                    <input type="text" class="form-control" placeholder="Title" value="">
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Assignment</label>
+                                                    <input type="text" class="form-control" placeholder="Enter Assignment" value="">
+                                                </div>
+                                            </div>
+
+                                            <button style="background-color: #3F4D67; margin-left: 12px" type="submit" class="btn btn-primary" title="btn btn-primary" data-toggle="tooltip">Generate</button>
+                                        </form>
+                                    </div>
+                                </div>
+   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,71 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Forms {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+    {{ block.super }}
+    <link rel="stylesheet" href="/static/assets/css/custom_style.css">
+{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Proposal Details</h5>
+                            <a href="#" class="btn btn-primary floating-btn">Floating Button</a>
+                              
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Proposal Component</h5>
+                            </div>
+                            <div class="card-body">
+                                {% comment %} <h5>Form controls</h5>
+                                <hr> {% endcomment %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <form action="{% url 'generateproposal2' %}">
+                                            <div class="form-group">
+                                                <label>Compnay Name</label>
+                                                <input type="text" class="form-control" placeholder="Company Name">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary" title="btn btn-primary" data-toggle="tooltip">Generate</button>
+                                        </form>
+                                    </div>
+                                </div>
+                               
+                                
+                                
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

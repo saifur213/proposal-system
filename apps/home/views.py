@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
+from django.shortcuts import render,redirect
 
 
 @login_required(login_url="/login/")
@@ -42,3 +43,17 @@ def pages(request):
     except:
         html_template = loader.get_template('home/page-500.html')
         return HttpResponse(html_template.render(context, request))
+def ViewProposals(request):
+        return render(request, 'home/view-proposals.html')
+def CreateProposals(request):
+        return render(request, 'home/create-proposal.html')
+def ViewProposalDetails(request):
+        return render(request, 'home/proposal-details-1.html')
+def ViewProposalDetails2(request):
+        return render(request, 'home/proposal-details-2.html')
+def UpdateProposal(request):
+        return render(request, 'home/update-proposal.html')
+def GenerateProposal1(request):
+        return render(request, 'home/generate-proposal-template-1.html')
+def GenerateProposal2(request):
+        return render(request, 'home/generate-proposal-template-2.html')
