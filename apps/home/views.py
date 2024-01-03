@@ -12,6 +12,8 @@ from django.shortcuts import render,redirect
 
 from .services.gpt_driver import gpt_driver
 
+from .models import Proposal
+
 
 
 @login_required(login_url="/login/")
@@ -47,7 +49,8 @@ def pages(request):
         html_template = loader.get_template('home/page-500.html')
         return HttpResponse(html_template.render(context, request))
 def ViewProposals(request):
-        return render(request, 'home/view-proposals.html')
+        proposals = Proposal.objects.all()
+        return render(request, 'home/view-proposals.html', {'proposals': proposals})
 def CreateProposals(request):
         return render(request, 'home/create-proposal.html')
 def ViewProposalDetails(request):

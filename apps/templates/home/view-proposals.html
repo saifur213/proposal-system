@@ -69,8 +69,8 @@
                                         <thead>
                                             <tr>
                                                 <th>SL. No</th>
-                                                <th>Logo</th>
-                                                <th>Categorye</th>
+                                                {% comment %} <th>Logo</th> {% endcomment %}
+                                                <th>Category</th>
                                                 <th>Title</th>
                                                 <th>Budget</th>
                                                 <th>Status</th>
@@ -78,53 +78,31 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            {% for proposal in proposals %}
                                             <tr class="unread">
-                                                <td><h6 class="mb-1">1</h6></td>
-                                                <td><img class="rounded-circle" style="width:40px;" src="/static/assets/images/user/avatar-1.jpg" alt="activity-user"></td>
+                                                <td><h6 class="mb-1">{{ proposal.Proposal_Id }}</h6></td>
+                                                {% comment %} <td><img class="rounded-circle" style="width:40px;" src="/static/assets/images/user/avatar-1.jpg" alt="activity-user"></td> {% endcomment %}
                                                 <td>
-                                                    <h6 class="mb-1">Telecom</h6>
+                                                    <h6 class="mb-1">{{ proposal.Category }}</h6>
                                             
                                                 </td>
                                                 <td>
-                                                    <h6 class="text-muted"></i>An Innovative Website Explorer</h6>
+                                                    <h6 class="text-muted"></i>{{ proposal.Title }}</h6>
                                                 </td>
-                                                <td><h6 class="mb-1">100</h6></td>                                           
+                                                <td><h6 class="mb-1">{{ proposal.Budget }}</h6></td>  
+                                                {% if proposal.Status == 1 %}                                         
                                                 <td>
                                                     <h6 class="m-0 text-c-green">Completed</h6>
                                                 </td>
+                                                {% elif proposal.Status == 0 %}
+                                                <td>
+                                                    <h6 class="m-0 text-c-red">Incomplete</h6>
+                                                </td>
+                                                {% endif %}
                                                 <td><a href="{% url 'proposaldetailsview' %}" class="label theme-bg2 text-white f-12" data-id="1">View</a><a href="{% url 'updateproposal' %}" class="label theme-bg text-white f-12">Edit</a><a href="{% url 'updateproposal' %}" class="label theme-bg2 text-white f-12">Delete</a></td>
                                             </tr>
-                                            <tr class="unread">
-                                                <td><h6 class="mb-1">2</h6></td>
-                                                <td><img class="rounded-circle" style="width:40px;" src="/static/assets/images/user/avatar-2.jpg" alt="activity-user"></td>
-                                                <td>
-                                                    <h6 class="mb-1">Marketing</h6>
-                                                    
-                                                </td>
-                                                <td>
-                                                    <h6 class="text-muted"></i>Your Personal Fitness App</h6>
-                                                </td>
-                                                <td><h6 class="mb-1">100</h6></td>   
-                                                <td>
-                                                    <h6 class="m-0 text-c-red">Incomplete</h6>
-                                                </td>
-                                                <td><a href="{% url 'proposaldetailsview2' %}" class="label theme-bg2 text-white f-12">View</a><a href="{% url 'updateproposal' %}" class="label theme-bg text-white f-12">Edit</a><a href="{% url 'updateproposal' %}" class="label theme-bg2 text-white f-12">Delete</a></td>
-                                            </tr>
-                                            <tr class="unread">
-                                                <td><h6 class="mb-1">3</h6></td>
-                                                <td><img class="rounded-circle" style="width:40px;" src="/static/assets/images/user/avatar-3.jpg" alt="activity-user"></td>
-                                                <td>
-                                                    <h6 class="mb-1">Government</h6>
-                                                    
-                                                </td>
-                                                <td>Your Personal Fitness App</h6>
-                                                </td>
-                                                <td><h6 class="mb-1">100</h6></td>   
-                                                <td>
-                                                    <h6 class="m-0 text-c-red">Incomplete</h6>
-                                                </td>
-                                                <td><a href="{% url 'proposaldetailsview3' %}" class="label theme-bg2 text-white f-12">View</a><a href="{% url 'updateproposal' %}" class="label theme-bg text-white f-12">Edit</a><a href="{% url 'updateproposal' %}" class="label theme-bg2 text-white f-12">Delete</a></td>
-                                            </tr>
+                
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>

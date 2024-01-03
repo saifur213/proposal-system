@@ -43,7 +43,7 @@
                                         <form>
                                             <div class="form-group">
                                                 <label for="exampleFormControlSelect1">Category</label>
-                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                <select class="form-control" id="exampleFormControlSelect1" name="category">
                                                     <option>E-Commerce</option>
                                                     <option>E-Commerce</option>
                                                     <option>E-Commerce</option>
@@ -53,35 +53,30 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Title</label>
-                                                <input type="text" class="form-control" placeholder="Enter Title">
+                                                <input type="text" class="form-control" placeholder="Enter Title" name="title">
                                             </div>
                                             <div class="form-group">
                                                 <label>Budget</label>
-                                                <input type="text" class="form-control" placeholder="Enter Budget">
+                                                <input type="text" class="form-control" placeholder="Enter Budget" name="budget">
                                             </div>
-                                            
                                             <div class="form-group">
-                                                <label for="exampleFormControlTextarea1">Description</label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                <label>Status</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="status" id="status1" value="1" checked>
+                                                    <label class="form-check-label" for="status1">
+                                                        Completed
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="status" id="status0" value="0">
+                                                    <label class="form-check-label" for="status0">
+                                                        Not Completed
+                                                    </label>
+                                                </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                         </form>
-                                        {% comment %} <form>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Email</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
-                                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Password</label>
-                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                            </div>
-                                            <div class="form-group form-check">
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                        </form> {% endcomment %}
+                                        
                                     </div>
                                     <div class="col-md-6">
                                         
