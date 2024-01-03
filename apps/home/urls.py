@@ -14,8 +14,10 @@ urlpatterns = [
     path('createproposals/', views.CreateProposals, name='createproposals'),
     path('proposaldetailsview/', views.ViewProposalDetails, name='proposaldetailsview'),
     path('proposaldetailsview2/', views.ViewProposalDetails2, name='proposaldetailsview2'),
+    path('proposaldetailsview3/', views.ViewProposalDetails3, name='proposaldetailsview3'),
     path('generateproposal1/', views.GenerateProposal1, name='generateproposal1'),
     path('generateproposal2/', views.GenerateProposal2, name='generateproposal2'),
+    path('generateproposal3/', views.GenerateProposal3, name='generateproposal3'),
     path('updateproposal/', views.UpdateProposal, name='updateproposal'),
     
 

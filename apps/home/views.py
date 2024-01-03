@@ -10,6 +10,9 @@ from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render,redirect
 
+from .services.gpt_driver import gpt_driver
+
+
 
 @login_required(login_url="/login/")
 def index(request):
@@ -51,9 +54,18 @@ def ViewProposalDetails(request):
         return render(request, 'home/proposal-details-1.html')
 def ViewProposalDetails2(request):
         return render(request, 'home/proposal-details-2.html')
+def ViewProposalDetails3(request):
+        return render(request, 'home/proposal-details-3.html')
 def UpdateProposal(request):
         return render(request, 'home/update-proposal.html')
 def GenerateProposal1(request):
         return render(request, 'home/generate-proposal-template-1.html')
 def GenerateProposal2(request):
         return render(request, 'home/generate-proposal-template-2.html')
+def GenerateProposal3(request):
+        text = gpt_driver()
+        print(text)
+        context = {
+        'generated_text': text,
+        }
+        return render(request, 'home/generate-proposal-template-3.html',context)
