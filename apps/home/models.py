@@ -18,3 +18,13 @@ class Proposal(models.Model):
     def __str__(self):
         return f"Proposal {self.Proposal_Id}: {self.Title}"
 
+class ProposalField(models.Model):
+    Proposal_Field_ID = models.AutoField(primary_key=True)
+    Proposal_Id = models.ForeignKey(Proposal, on_delete=models.CASCADE)
+    Topic = models.CharField(max_length=255)
+    Member1 = models.CharField(max_length=255)
+    Member2 = models.CharField(max_length=255)
+    Member3 = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.Topic

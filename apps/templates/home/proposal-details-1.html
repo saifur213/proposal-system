@@ -55,8 +55,9 @@
                                 <hr> {% endcomment %}
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <form action="{% url 'generateproposal1' %}">
-                                            <div class="form-group col-md-12">
+                                        <form method="post" action="{% url 'generateproposal1' proposal.Proposal_Id %}">
+                                            {% csrf_token %}
+                                            {% comment %} <div class="form-group col-md-12">
                                                 <div class="title-section">
                                                     <h6 class="card-title title-content">Company Details</h6>
                                                 </div>
@@ -77,8 +78,8 @@
                                                     <label>Mobile</label>
                                                     <input type="number" class="form-control" placeholder="Enter mobile number" value="">
                                                 </div>
-                                            </div>
-                                            <div class="form-group col-md-12">
+                                            </div> {% endcomment %}
+                                            {% comment %} <div class="form-group col-md-12">
                                                 <div class="title-section">
                                                     <h6 class="card-title title-content">Client Details</h6>
                                                 </div>
@@ -95,24 +96,81 @@
                                                     <label>Client Email</label>
                                                     <input type="text" class="form-control" placeholder="Enter email" value="">
                                                 </div>
+                                            </div> {% endcomment %}
+                                            <div class="form-group col-md-12">
+                                                <div class="title-section">
+                                                    <h6 class="card-title title-content">Basic Details</h6>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Category</label>
+                                                    <input type="text" class="form-control" placeholder="Category" value="{{ proposal.Category}}" readonly>
+                                                </div>
+
+                                                <div class="input-field">
+                                                    <label>Title</label>
+                                                    <input type="text" class="form-control" placeholder="Title" value="{{ proposal.Title}}">
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Budget</label>
+                                                    <input type="number" class="form-control" placeholder="Budget" value="{{ proposal.Budget}}">
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Topic</label>
+                                                    <input type="text" class="form-control" placeholder="Topic" value="" name="topic">
+                                                </div>
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <div class="title-section">
                                                     <h6 class="card-title title-content">Team Details</h6>
                                                 </div>
+                                                <div class="title-section">
+                                                    <h6 class="card-title title-content">Member 1</h6>
+                                                </div>
                                                 <div class="input-field">
                                                     <label>Full Name</label>
-                                                    <input type="text" class="form-control" placeholder="Full Name" value="Saifur Rahman" readonly>
+                                                    <input type="text" class="form-control" placeholder="Full Name" value="" name='member_1_name'>
                                                 </div>
 
-                                                <div class="input-field">
+                                                {% comment %} <div class="input-field">
                                                     <label>Title</label>
-                                                    <input type="text" class="form-control" placeholder="Title" value="">
+                                                    <input type="text" class="form-control" placeholder="Title" value="" name='member_1_title'>
                                                 </div>
                                                 <div class="input-field">
                                                     <label>Assignment</label>
-                                                    <input type="text" class="form-control" placeholder="Enter Assignment" value="">
+                                                    <input type="text" class="form-control" placeholder="Enter Assignment" value="" name='member_1_assignment'>
+                                                </div> {% endcomment %}
+                                                <div class="title-section">
+                                                    <h6 class="card-title title-content">Member 2</h6>
                                                 </div>
+                                                <div class="input-field">
+                                                    <label>Full Name</label>
+                                                    <input type="text" class="form-control" placeholder="Full Name" value="" name='member_2_name'>
+                                                </div>
+
+                                                {% comment %} <div class="input-field">
+                                                    <label>Title</label>
+                                                    <input type="text" class="form-control" placeholder="Title" value="" name='member_2_title'>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Assignment</label>
+                                                    <input type="text" class="form-control" placeholder="Enter Assignment" value="" name='member_2_assignment'>
+                                                </div> {% endcomment %}
+                                                <div class="title-section">
+                                                    <h6 class="card-title title-content">Member 3</h6>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Full Name</label>
+                                                    <input type="text" class="form-control" placeholder="Full Name" value="" name='member_3_name'>
+                                                </div>
+
+                                                {% comment %} <div class="input-field">
+                                                    <label>Title</label>
+                                                    <input type="text" class="form-control" placeholder="Title" value="" name='member_3_title'>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label>Assignment</label>
+                                                    <input type="text" class="form-control" placeholder="Enter Assignment" value="" name='member_3_assignment'>
+                                                </div> {% endcomment %}
                                             </div>
 
                                             <button style="background-color: #3F4D67; margin-left: 12px" type="submit" class="btn btn-primary" title="btn btn-primary" data-toggle="tooltip">Generate</button>

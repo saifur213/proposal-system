@@ -99,7 +99,7 @@
                                                     <h6 class="m-0 text-c-red">Incomplete</h6>
                                                 </td>
                                                 {% endif %}
-                                                <td><a href="{% url 'proposaldetailsview' %}" class="label theme-bg2 text-white f-12" data-id="1">View</a><a href="{% url 'updateproposal' %}" class="label theme-bg text-white f-12">Edit</a><a href="{% url 'updateproposal' %}" class="label theme-bg2 text-white f-12">Delete</a></td>
+                                                <td><a href="{% url 'proposaldetailsview' proposal.Proposal_Id %}" class="label theme-bg2 text-white f-12" data-id="1">View</a><a href="{% url 'updateproposal' %}" class="label theme-bg text-white f-12">Edit</a><a href="{% url 'updateproposal' %}" class="label theme-bg2 text-white f-12">Delete</a></td>
                                             </tr>
                 
                                             {% endfor %}
